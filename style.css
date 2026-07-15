@@ -1,0 +1,505 @@
+/* =========================================
+   VARIABLES DE COLOR Y FUENTES
+========================================= */
+:root {
+    /* Paleta Premium */
+    --bg-main: #F8FAFC; /* Gris muy claro */
+    --bg-card: #FFFFFF; /* Blanco */
+    --color-primary: #1E3A8A; /* Azul Oscuro (Sidebar, Titulos) */
+    --color-accent: #2563EB; /* Azul vibrante (Chips, Links, Detalles) */
+    --text-main: #334155; /* Texto gris oscuro */
+    --text-light: #94A3B8; /* Texto secundario gris claro */
+    --text-white: #FFFFFF;
+    
+    /* Tipografía */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Sombras y Bordes */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --shadow-hover: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+}
+
+/* =========================================
+   RESET Y BASE
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: #E2E8F0; /* Fondo del navegador */
+    color: var(--text-main);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* =========================================
+   ESTRUCTURA PRINCIPAL (LAYOUT)
+========================================= */
+.resume-wrapper {
+    background-color: var(--bg-main);
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-hover);
+    overflow: hidden;
+}
+
+/* =========================================
+   SIDEBAR (BARRA LATERAL)
+========================================= */
+.sidebar {
+    background-color: var(--color-primary);
+    color: var(--text-white);
+    width: 320px;
+    padding: 3rem 2rem;
+    flex-shrink: 0;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.profile-img-container {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem auto;
+    border: 3px solid var(--color-accent);
+    overflow: hidden;
+    background-color: #1E293B;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.title {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+
+.subtitle {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 300;
+}
+
+.sidebar-section {
+    margin-bottom: 2.5rem;
+}
+
+.section-title-light {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--text-white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-section ul {
+    list-style: none;
+}
+
+.sidebar-section ul li {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #CBD5E1;
+}
+
+.sidebar-section ul li i {
+    color: var(--color-accent);
+    width: 16px;
+    text-align: center;
+}
+
+/* Educación Sidebar */
+.edu-item {
+    margin-bottom: 1.5rem;
+}
+.edu-item h5 {
+    font-size: 0.95rem;
+    color: var(--text-white);
+    margin-bottom: 0.2rem;
+}
+.edu-item p {
+    font-size: 0.85rem;
+    color: #CBD5E1;
+}
+.edu-item .year {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* Idiomas Sidebar */
+.languages li {
+    justify-content: space-between;
+}
+.languages li span {
+    color: var(--color-accent);
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+========================================= */
+.main-content {
+    flex-grow: 1;
+    padding: 3rem 4rem;
+    background-color: var(--bg-card);
+}
+
+.section {
+    margin-bottom: 3.5rem;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title i {
+    color: var(--color-accent);
+}
+
+.profile-section p {
+    text-align: justify;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+/* =========================================
+   HABILIDADES (CHIPS)
+========================================= */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-chip {
+    background-color: #EFF6FF;
+    color: var(--color-accent);
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #DBEAFE;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-chip:hover {
+    background-color: var(--color-accent);
+    color: var(--text-white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* =========================================
+   PROYECTOS (CARDS)
+========================================= */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: var(--bg-main);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: #BFDBFE;
+}
+
+.project-title {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-desc {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+}
+
+.project-tech span {
+    font-size: 0.7rem;
+    background-color: #E2E8F0;
+    color: #475569;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* =========================================
+   EXPERIENCIA (TIMELINE VERTICAL)
+========================================= */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #E2E8F0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -37px; /* 2rem pl + 1px border - center dot */
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    border: 2px solid var(--bg-card);
+    box-shadow: 0 0 0 3px #DBEAFE;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    background-color: var(--color-primary);
+    transform: scale(1.2);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.2rem;
+}
+
+.job-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.job-date {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    background-color: #EFF6FF;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.company-name {
+    font-size: 0.95rem;
+    color: #64748B;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.job-tasks {
+    list-style-position: inside;
+    list-style-type: none;
+}
+
+.job-tasks li {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.job-tasks li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (MÓVILES Y TABLETS)
+========================================= */
+@media screen and (max-width: 850px) {
+    .resume-wrapper {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .sidebar-section ul li {
+        justify-content: center;
+    }
+    
+    .main-content {
+        padding: 2rem;
+    }
+    
+    .exp-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* =========================================
+   OPTIMIZACIÓN PARA IMPRESIÓN (PDF / A4)
+========================================= */
+@media print {
+    body {
+        background-color: #fff;
+        padding: 0;
+    }
+    
+    .resume-wrapper {
+        box-shadow: none;
+        max-width: 100%;
+        width: 100%;
+        border-radius: 0;
+    }
+    
+    .sidebar {
+        padding: 2rem 1.5rem;
+        /* Forzamos colores en impresión */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .main-content {
+        padding: 2rem;
+    }
+    
+    .project-card, .skill-chip {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        box-shadow: none;
+        border: 1px solid #e2e8f0;
+    }
+    
+    .timeline-item {
+        page-break-inside: avoid;
+    }
+    
+    .section {
+        margin-bottom: 2rem;
+    }
+}
+
+/* =========================================
+   AJUSTE DE TAMAÑOS DE FUENTE (9pt y 10pt)
+========================================= */
+
+/* 1. Tamaño de texto general (9pt) */
+body, 
+.profile-section p, 
+.project-desc, 
+.job-tasks li, 
+.sidebar-section ul li, 
+.company-name, 
+.edu-item p {
+    font-size: 9pt;
+}
+
+/* 2. Tamaño de los Títulos de secciones y cargos (10pt) */
+.section-title, 
+.section-title-light, 
+.project-title, 
+.job-title, 
+.title {
+    font-size: 10pt;
+}
+
+/* 3. Ajustes menores para mantener la jerarquía visual */
+.name {
+    font-size: 14pt; /* El nombre debe ser un poco más grande para destacar */
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 9pt;
+}
+
+.job-date, 
+.skill-chip, 
+.project-tech span, 
+.languages li span, 
+.edu-item .year {
+    font-size: 8pt; /* Las etiquetas y fechas bajan a 8pt para verse como "chips" */
+}
